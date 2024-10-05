@@ -1,21 +1,23 @@
 const { test, expect } = require("@playwright/test");
 const { POManager } = require("../Pages/POManager");
+const dataset = JSON.parse(JSON.stringify(require("../JSONdata/ClientAppPO.json")));
 
-test.only("Client App login", async ({ page }) => {
+test.describe.configure({ mode:"parallel"});  
+for(const data of dataset)
+{
+
+test(`@Tag Getting Data from JSON files ${data.productName}`, async ({ page }) => {
   const poManager = new POManager(page);
-  const username = "mmiller9911@gmail.com";
-  const password = "2&3gr0gTDWaz";
-  const productName = "ZARA COAT 3";
 
   const loginPage = poManager.getLoginPage();
   await loginPage.goTo();
-  await loginPage.validLogin(username, password);
+  await loginPage.validLogin(data.username, data.password);
   const dashboardPage = poManager.getDashboardPage();
-  await dashboardPage.searchProductAddCart(productName);
+  await dashboardPage.searchProductAddCart(data.productName);
   await dashboardPage.navigateToCart();
 
   const cartPage = poManager.getCartPage();
-  await cartPage.VerifyProductIsDisplayed(productName);
+  await cartPage.VerifyProductIsDisplayed(data.productName);
   await cartPage.Checkout();
 
   const ordersReviewPage = poManager.getOrdersReviewPage();
@@ -27,5 +29,6 @@ test.only("Client App login", async ({ page }) => {
   await ordersHistoryPage.searchOrderAndSelect(orderId);
   expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
 
-  //Zara Coat 4
-});
+
+})};
+

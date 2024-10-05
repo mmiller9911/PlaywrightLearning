@@ -1,5 +1,5 @@
 const { test, expect, request } = require("@playwright/test");
-const { APIUtilities } = require("./Utilities/APIUtilities");
+const {APIUtilities} = require ("/PlayWrightAutomation/Utilities/APIUtilities")
 
 test("Security intercept", async ({ page }) => {
   const products = page.locator(".card-body");

@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","9731","@Tag Getting Data from JSON files ZARA COAT 3","","Sat Oct 05 13:03:27 BST 2024","failed","Sat Oct 05 13:03:36 BST 2024","","ClientAppPO.spec.js","",""
+"","9925","@Tag Getting Data from JSON files ADIDAS ORIGINAL","","Sat Oct 05 13:03:27 BST 2024","failed","Sat Oct 05 13:03:36 BST 2024","","ClientAppPO.spec.js","",""

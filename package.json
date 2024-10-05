@@ -4,14 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests": "npx playwright test"
+    "tests": "npx playwright test",
+    "Tag": "npx playwright test  --grep \"@Tag\"",
+    "RunSecondConfig": "npx playwright test --config .\\playwright.config1.js --project=Chrome"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
-    "@types/node": "^20.12.13"
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^20.12.13",
+    "allure-playwright": "^3.0.4"
   },
   "dependencies": {
     "exceljs": "^4.4.0"
