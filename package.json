@@ -6,7 +6,8 @@
   "scripts": {
     "tests": "npx playwright test",
     "Tag": "npx playwright test  --grep \"@Tag\"",
-    "RunSecondConfig": "npx playwright test --config .\\playwright.config1.js --project=Chrome"
+    "RunSecondConfig": "npx playwright test --config .\\playwright.config1.js --project=Chrome",
+    "RunTs": "npx playwright test --config .\\playwright.config1.js --project=Chrome"
   },
   "keywords": [],
   "author": "",
