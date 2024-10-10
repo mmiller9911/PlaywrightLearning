@@ -18,7 +18,7 @@ const config = {
         headless: false,
         screenshot: 'on',
         trace: 'on',
-        ...devices["iPhone 13"]
+        //...devices["iPhone 13"]
       },
     },
     {
@@ -31,8 +31,8 @@ const config = {
         ignoreHttpsErrors: true,
         permissions:['geolocation'],
         trace: 'on',
-        viewport: {"width":420,"height":420},
-        ...devices["Pixel 2 XL"]
+        //viewport: {"width":420,"height":420},
+        //...devices["Pixel 2 XL"]
       },
     }
   ]

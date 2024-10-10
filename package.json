@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tests": "npx playwright test",
+    "testFile": "npx playwright test tests/ClientAppPO.spec.ts --project=Chrome",
     "Tag": "npx playwright test  --grep \"@Tag\"",
     "RunSecondConfig": "npx playwright test --config .\\playwright.config1.js --project=Chrome",
     "RunTs": "npx playwright test --config .\\playwright.config1.js --project=Chrome"
