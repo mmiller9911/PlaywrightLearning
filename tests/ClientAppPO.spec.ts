@@ -1,5 +1,5 @@
-import {test,expect,Locator,Page} from '@playwright/test';
-import { POManager } from '../Pages/POManager';
+import {test,expect} from '@playwright/test';
+import { POManager } from '../Pages_Typescript/POManager';
 const dataset = JSON.parse(JSON.stringify(require("../JSONdata/ClientAppPO.json")));
  
 for(const data of dataset)
@@ -20,7 +20,8 @@ test.only(`Getting Data from JSON files ${data.productName}`, async ({ page }) =
 
   const ordersReviewPage = poManager.getOrdersReviewPage();
   await ordersReviewPage.searchCountryAndSelect("ind", "India");
-  const orderId = await ordersReviewPage.SubmitAndGetOrderId();
+  let orderId:any;
+  orderId = await ordersReviewPage.SubmitAndGetOrderId();
   console.log(orderId);
   await dashboardPage.navigateToOrders();
   const ordersHistoryPage = poManager.getOrdersHistoryPage();

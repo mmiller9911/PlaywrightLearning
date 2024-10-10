@@ -37,10 +37,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var test_1 = require("@playwright/test");
-var POManager_1 = require("../Pages/POManager");
+var POManager_1 = require("../Pages_Typescript/POManager");
 var dataset = JSON.parse(JSON.stringify(require("../JSONdata/ClientAppPO.json")));
 var _loop_1 = function (data) {
-    (0, test_1.test)("Getting Data from JSON files ".concat(data.productName), function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    test_1.test.only("Getting Data from JSON files ".concat(data.productName), function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
         var poManager, loginPage, dashboardPage, cartPage, ordersReviewPage, orderId, ordersHistoryPage, _c, _d, _e;
         var page = _b.page;
         return __generator(this, function (_f) {
