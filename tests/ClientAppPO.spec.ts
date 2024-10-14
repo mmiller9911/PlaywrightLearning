@@ -30,16 +30,14 @@ test(`Getting Data from JSON files ${data.productName}`, async ({ page }) => {
 
 
 })};
-test('Log in to Shetty academy',async({page})=>
+test('Log in to FULL Salesforce environment',async({page})=>
   {
-      const userName = page.locator("#username");
-  
-      await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
-      await expect(page).toHaveTitle("LoginPage Practise | Rahul Shetty Academy");
-      await userName.fill("rahulshettyacademy");
-      await page.locator("#password").fill("learning");
-      await page.locator("#signInBtn").click();
-      await expect(page).toHaveTitle("ProtoCommerce");
+      await page.goto("https://test.salesforce.com/");
+      await expect(page).toHaveTitle("Login | Salesforce");
+      await page.locator("#username").fill("");
+      await page.locator("#password").fill("");
+      await page.locator("#Login").click();
+      //await page.pause();
 })
 test('Fail to Log in to Shetty academy',async({page})=>
   {
